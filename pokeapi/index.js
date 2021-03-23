@@ -2,6 +2,8 @@
 const pulumi = require("@pulumi/pulumi");
 const aws = require("@pulumi/aws");
 const awsx = require("@pulumi/awsx");
+const service = require('./app/services');
+
 
 // Create a public HTTP endpoint (using AWS APIGateway)
 const endpoint = new awsx.apigateway.API("hello", {
@@ -16,17 +18,16 @@ const endpoint = new awsx.apigateway.API("hello", {
         {
             path: "/source",
             method: "GET",
-            eventHandler: (req, ctx, cb) => {
-                cb(undefined, {
-                    statusCode: 200,
-                    body: Buffer.from(JSON.stringify({ name: "AWS" }), "utf8").toString("base64"),
-                    isBase64Encoded: true,
-                    headers: { "content-type": "application/json" },
-                });
-            },
+            eventHandler: service.source,
+            
+        },
+        { path: "/helloword", 
+          method: "GET", 
+          eventHandler: service.helloword,
         },
     ],
 });
+
 
 // Export the public URL for the HTTP service
 exports.url = endpoint.url;
