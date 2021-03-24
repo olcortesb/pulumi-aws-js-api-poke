@@ -13,17 +13,10 @@ const endpoint = new awsx.apigateway.API("hello", {
             path: "/",
             localPath: "www",
         },
-
-        // Serve a simple REST API on `GET /name` (using AWS Lambda)
         {
-            path: "/source",
+            path: "/getpoke/{key}",
             method: "GET",
-            eventHandler: service.source,
-        },
-        {
-            path: "/helloword/{key}",
-            method: "GET",
-            eventHandler: service.helloword,
+            eventHandler: service.pokeapi,
             requestValidator: "PARAMS_ONLY",
             requiredParams: [{
                 name: "key",
@@ -32,7 +25,6 @@ const endpoint = new awsx.apigateway.API("hello", {
         },
     ],
 });
-
 
 // Export the public URL for the HTTP service
 exports.url = endpoint.url;
