@@ -1,12 +1,13 @@
-//import * as awsx from "@pulumi/awsx";
+const axios = require('axios').default;
 
-// Define our routes, independent from the API Gateway itself.
+const url = 'https://pokeapi.co/api/v2/pokemon/ditto';
 
 async function helloword (event){
+    const response = await axios.get(url)
     return {
         statusCode: 200,
-        body: "Hello, API Gateway!",
-     } 
+        body: response.data.base_experience,
+    };;
 }
 
 function source(req, ctx, cb){

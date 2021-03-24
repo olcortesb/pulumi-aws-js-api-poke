@@ -19,7 +19,6 @@ const endpoint = new awsx.apigateway.API("hello", {
             path: "/source",
             method: "GET",
             eventHandler: service.source,
-            
         },
         { path: "/helloword", 
           method: "GET", 
