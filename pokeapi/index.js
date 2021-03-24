@@ -20,9 +20,15 @@ const endpoint = new awsx.apigateway.API("hello", {
             method: "GET",
             eventHandler: service.source,
         },
-        { path: "/helloword", 
-          method: "GET", 
-          eventHandler: service.helloword,
+        {
+            path: "/helloword/{key}",
+            method: "GET",
+            eventHandler: service.helloword,
+            requestValidator: "PARAMS_ONLY",
+            requiredParams: [{
+                name: "key",
+                in: "path",
+            }]
         },
     ],
 });
