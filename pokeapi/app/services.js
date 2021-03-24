@@ -4,7 +4,7 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 
 async function pokeapi(event){
     const { path, queryStringParameters, headers, body } = event;
-    const response = await axios.get(url + path.split('/')[2])
+    const response = await axios.get(url + path.split('/').pop().toLowerCase())
     return {
         statusCode: 200,
         body: Buffer.from(JSON.stringify(
