@@ -3,11 +3,11 @@
 Aplicacion busqueda de pokemones basada en Api: https://pokeapi.co/ 
 ## Comenzando 🚀
 
+- Desplegado en AWS
+- Insfraestructura construida con Pulumi (https://www.pulumi.com/)
 - Desarrollado en Node.js
-- Deploy en AWS
-- Insfraestructura construida con Pulumi
-- Test con Mocha
-- Front Basico(Html,CCS,Jquery)
+- Test con Mocha (https://mochajs.org/)
+- Front clasico (Html,CCS,Jquery)
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
@@ -34,6 +34,8 @@ pokeapi
 ```
 ### Arquitectura ⛺ 
 
+Se opto por una arquitectura serverless basado en un Api gateway un Bucket S3 y una Lambda.
+
 ![image info](arquitectura.png)
 
 
@@ -41,42 +43,46 @@ pokeapi
 
 Node.js
 ```
-node -v
-v10.16.3 
+$ node -v
+$ v10.16.3 
 # o superior
 ```
 Pulumi (mac)
 ```
-brew install pulumi
+$ brew install pulumi
 ```
-otros sistemas: https://www.pulumi.com/docs/get-started/install/
+instalacion otros sistemas: https://www.pulumi.com/docs/get-started/install/
 
 AWS
 
 Cuenta en AWS y Clave de acceso CLI
 
-Exportar 
+Exportar claves de acceso AWS
 
 ```
-export AWS_ACCESS_KEY_ID=<>
-export AWS_SECRET_ACCESS_KEY=<>
+$ export AWS_ACCESS_KEY_ID=<>
+$ export AWS_SECRET_ACCESS_KEY=<>
 ```
 
 Mocha
 
+```
+$ npm install mocha
+
+```
 
 ## Ejecutando las pruebas ⚙️
 ```
-cd pokeapi
-npm test
+$ cd pokeapi
+$ npm test
 ```
 
 
 ## Despliegue 📦
 
 ```
-cd pokeapi
-pulumi up
+$ cd pokeapi
+$ pulumi up
 ```
 ## Construido con 🛠️
 
