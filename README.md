@@ -9,7 +9,7 @@ Aplicacion busqueda de pokemones basada en Api: https://pokeapi.co/
 - Test con Mocha (https://mochajs.org/)
 - Front clasico (Html,CCS,Jquery)
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+⛵ **Deployment** para conocer como desplegar el proyecto.
 
 Organizacion de Archivos (Detalle entre parentesis)
 
