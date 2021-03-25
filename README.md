@@ -11,16 +11,16 @@ Aplicacion busqueda de pokemones basada en Api: https://pokeapi.co/
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
-Organizacion de Archivos
+Organizacion de Archivos (Detalle entre parentesis)
 
 ```
 pokeapi
-│   index.js
+│   index.js (Definicion Infraestructura Pulumi Api Gateway)
 │   package.json
-│   pulumi.yaml
+│   pulumi.yaml (Configuracion basica Pulumi)
 │
 └───app
-│   │   services.js
+│   │   services.js (AWS Lambda)
 │   
 └─── Test
 │   │   test.js
@@ -29,7 +29,7 @@ pokeapi
     │   404.png
     │   favicon.ico
     │   favicon.png
-    │   index.html
+    │   index.html (Pagina principal)
     │   sticky-footer...
 ```
 ### Arquitectura ⛺ 
