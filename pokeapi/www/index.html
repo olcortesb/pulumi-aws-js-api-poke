@@ -94,6 +94,7 @@
           $('#table').bootstrapTable('destroy');
           var poke = $('#search-input').val();
           $.ajax({
+            cache: false,
             type: "GET",
             url: "https://gb5oezi1z7.execute-api.us-west-2.amazonaws.com/stage/getpoke/" + poke,
             success: function (mydata) {
@@ -102,7 +103,14 @@
                 data: [mydata]
               });
             },
-            cache: false
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+              $('#table').bootstrapTable({
+                data: [{
+                        "image":"404.png",
+                        "name":"Sin resultados"
+                      }]
+              });            
+            }
           });
         });
       });
