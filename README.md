@@ -84,6 +84,11 @@ $ npm test
 $ cd pokeapi
 $ pulumi up
 ```
+Borrado Stacks
+```
+$ cd pokeapi
+$ pulumi destroy
+```
 ## Construido con 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
